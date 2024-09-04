@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorama - Social Motorbiking App</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #34495e;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: opacity 0.3s ease;
+        }
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), 
+                        url('logo.png') no-repeat center center,
+                        url('/api/placeholder/1200/600') no-repeat center center;
+            background-size: auto, cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+        section {
+            padding: 4rem 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .feature {
+            flex-basis: calc(33.333% - 40px);
+            margin: 20px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        .feature i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .support {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        .support-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .support-info, .support-form {
+            flex-basis: 48%;
+        }
+        .support-form input, .support-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        @media (max-width: 768px) {
+            .feature {
+                flex-basis: calc(50% - 40px);
+            }
+            .support-content {
+                flex-direction: column;
+            }
+            .support-info, .support-form {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Motorama</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#support">Support</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Motorama</h1>
+        <p>The Ultimate Social Motorbiking App</p>
+        <!-- <a href="#" class="cta-button">Download Now</a> -->
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Features</h2>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-route"></i>
+                    <h3>Record Rides</h3>
+                    <p>Track your routes and analyze your performance with detailed statistics.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Share Experiences</h3>
+                    <p>Connect with other riders and share your favorite routes and moments.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Gamify Riding</h3>
+                    <p>Complete challenges, earn badges, and climb the leaderboards.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Discover Routes</h3>
+                    <p>Explore new riding paths and hidden gems in your area.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Join Communities</h3>
+                    <p>Find and connect with like-minded riders in your area.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your improvement over time with detailed analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Motorama</h2>
+            </div>
+            <p>Motorama is a cutting-edge social motorbiking app designed to enhance your riding experience. Whether you're a casual rider or a seasoned pro, Motorama offers a suite of features to track, share, and gamify your motorbiking adventures. With a focus on community and performance, Motorama is the ultimate companion for every motorcycle enthusiast.</p>
+        </div>
+    </section>
+
+    <section id="support" class="support">
+        <div class="container">
+            <div class="section-header">
+                <h2>Support</h2>
+            </div>
+            <div class="support-content">
+                <div class="support-info">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> Email: support@motorama.app</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Motorama. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
